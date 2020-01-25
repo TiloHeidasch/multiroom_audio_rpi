@@ -13,10 +13,10 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get -f install -y git
 git clone https://github.com/TiloHeidasch/multiroom_audio_rpi
 
 ### Install Server:
-sudo ./installServer.sh
+./multiroom_audio_rpi/installServer.sh
 
 ### Install Client
-sudo ./installClient.sh aaa.bbb.ccc.ddd
+./multiroom_audio_rpi/installClient.sh aaa.bbb.ccc.ddd
 Provide server IP in aaa.bbb.ccc.ddd
 
 ## Credits
