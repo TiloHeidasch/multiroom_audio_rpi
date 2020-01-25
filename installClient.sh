@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 #Valid IP courtesy of https://www.linuxjournal.com/content/validating-ip-address-bash-script
