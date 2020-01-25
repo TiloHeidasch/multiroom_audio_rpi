@@ -28,6 +28,9 @@ ExecStart=snapserver
 WantedBy=multi-user.target
 " | sudo tee /etc/systemd/system/multiroom_audio_rpi_server.service
 
+#===============START NEW SERVICE ROUTINE===========
+sudo systemctl enable multiroom_audio_rpi_server.service
+
 #====================REBOOT RASPOTIFY==============
 sudo systemctl restart raspotify.service
 

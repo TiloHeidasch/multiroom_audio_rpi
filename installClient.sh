@@ -68,5 +68,8 @@ ExecStart=$basepath/multiroom_audio_rpi/runClient.sh $1
 WantedBy=multi-user.target
 " | sudo tee /etc/systemd/system/multiroom_audio_rpi_client_$1.service
 
+### Enable the new service routine
+sudo systemctl enable multiroom_audio_rpi_client_$1.service
+
 ### Up the new service routine
 sudo systemctl start multiroom_audio_rpi_client_$1.service
