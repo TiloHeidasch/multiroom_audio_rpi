@@ -34,6 +34,14 @@ fi
 
 basepath=$(pwd)
 
+### Make sure that the basepath has the correct ending
+if [[ $basepath == *"multiroom_audio_rpi"* ]]; then
+  echo "Path is Correct"
+else
+  echo "Path is incorrect. Trying to fix"
+  basepath="$basepath/multiroom_audio_rpi"
+fi
+
 ### Make sure we are up to date
 sudo apt-get update
 sudo apt-get upgrade
@@ -62,7 +70,7 @@ Description=Multiroom Audio RPi Client Service for $1
 
 [Service]
 Type=simple
-ExecStart=$basepath/multiroom_audio_rpi/runClient.sh $1
+ExecStart=$basepath/runClient.sh $1
 
 [Install]
 WantedBy=multi-user.target
