@@ -5,7 +5,7 @@ curl -sL https://dtcooper.github.io/raspotify/install.sh | sh &&
 
 #====================SNAPSERVER INSTALL==========
 wget https://github.com/badaix/snapcast/releases/download/v0.17.1/snapserver_0.17.1-1_armhf.deb &&
-sudo dpkg -i --force-all snapserver_0.17.0-1_armhf.deb &&
+sudo dpkg -i --force-all snapserver_0.17.1-1_armhf.deb &&
 sudo apt-get -f install -y &&
 
 #====================CONFIGURE RASPOTIFY==========
