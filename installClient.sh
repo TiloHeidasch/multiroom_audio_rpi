@@ -34,7 +34,7 @@ fi
 
 basepath=$(pwd)
 
-### Make sure that the basepath has the correct ending
+# Make sure that the basepath has the correct ending
 if [[ $basepath == *"multiroom_audio_rpi"* ]]; then
   echo "Path is Correct"
 else
@@ -42,16 +42,16 @@ else
   basepath="$basepath/multiroom_audio_rpi"
 fi
 
-### Make sure we are up to date
+# Make sure we are up to date
 sudo apt-get update
 sudo apt-get upgrade
 
-### Downlaod the Snapclient
+# Downlaod the Snapclient
 wget https://github.com/badaix/snapcast/releases/download/v0.17.1/snapclient_0.17.1-1_armhf.deb
 sudo dpkg -i snapclient_0.17.1-1_armhf.deb
 sudo apt-get -f install -y
 
-### Install Dependancies
+# Install Dependancies
 sudo apt-get install -y\
 	alsa-utils \
 	libasound2 \
@@ -61,10 +61,10 @@ sudo apt-get install -y\
 	libavahi-client-dev \
 	--no-install-recommends
 	
-### Configure Pulse
+# Configure Pulse
 sudo cp ./config/default.pa /etc/pulse/default.pa
 
-### Create service routine
+# Create service routine
 echo "[Unit]
 Description=Multiroom Audio RPi Client Service for $1
 
@@ -76,11 +76,11 @@ ExecStart=$basepath/runClient.sh $1
 WantedBy=multi-user.target
 " | sudo tee /etc/systemd/system/multiroom_audio_rpi_client_$1.service
 
-### Enable the new service routine
+# Enable the new service routine
 sudo systemctl enable multiroom_audio_rpi_client_$1.service
 
-### Up the new service routine
+# Up the new service routine
 sudo systemctl start multiroom_audio_rpi_client_$1.service
 
-### Cleanup
+# Cleanup
 sudo rm snapclient_0.17.1-1_armhf.deb
