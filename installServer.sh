@@ -36,3 +36,6 @@ sudo systemctl restart raspotify.service
 
 #===============START NEW SERVICE ROUTINE===========
 sudo systemctl start multiroom_audio_rpi_server.service
+
+#===============CLEANUP===========
+sudo rm snapserver_0.17.1-1_armhf.deb
