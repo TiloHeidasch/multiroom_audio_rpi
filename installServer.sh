@@ -31,8 +31,8 @@ WantedBy=multi-user.target
 # Start new service routine
 sudo systemctl enable multiroom_audio_rpi_server.service
 
-# Reboot Raspotify
-sudo systemctl restart raspotify.service
+# Deactivate Raspotify
+sudo systemctl disable raspotify.service
 
 # Start new service routine
 sudo systemctl start multiroom_audio_rpi_server.service
