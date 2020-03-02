@@ -15,6 +15,7 @@ BACKEND_ARGS="--backend pipe --device /tmp/snapfifo"' | sudo tee /etc/default/ra
 
 # Configure Snapserver
 sudo cp config/snapserver.conf /etc/snapserver.conf
+echo 'SNAPSERVER_OPTS="-d"' | sudo tee /etc/default/snapserver
 
 # Create Service routine
 echo "[Unit]
