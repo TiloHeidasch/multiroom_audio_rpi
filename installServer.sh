@@ -14,7 +14,7 @@ BITRATE="320"
 BACKEND_ARGS="--backend pipe --device /tmp/snapfifo"' | sudo tee /etc/default/raspotify
 
 # Configure Snapserver
-echo 'SNAPSERVER_OPTS="-d -s spotify:///librespot?name=spotify&bitrate=320"' | sudo tee /etc/default/snapserver
+sudo cp config/snapserver.conf /etc/snapserver.conf
 
 # Create Service routine
 echo "[Unit]
