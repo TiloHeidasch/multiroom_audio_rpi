@@ -6,11 +6,11 @@
 <p>Remember to setup wifi and ssh on your RPi: https://www.raspberrypi.org/documentation/configuration/wireless/headless.md</p>
 
 ## Intallation
-### Install git:
-`sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get -f install -y git`
 
-### Download this repository:
-`git clone https://github.com/TiloHeidasch/multiroom_audio_rpi`
+### Download
+`wget -q https://github.com/TiloHeidasch/multiroom_audio_rpi/archive/master.zip
+unzip master.zip
+rm master.zip`
 
 ### Install Server:
 `./multiroom_audio_rpi/installServer.sh`
