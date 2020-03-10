@@ -8,9 +8,9 @@
 ## Intallation
 
 ### Download
-`wget -q https://github.com/TiloHeidasch/multiroom_audio_rpi/archive/master.zip
-unzip master.zip
-rm master.zip`
+    wget -q https://github.com/TiloHeidasch/multiroom_audio_rpi/archive/master.zip
+    unzip master.zip
+    rm master.zip
 
 ### Install Server:
 `./multiroom_audio_rpi/installServer.sh`
