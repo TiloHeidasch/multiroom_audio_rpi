@@ -21,35 +21,42 @@ cd ..
 ## Add Bluetooth User
 sudo adduser blueaudio
 ## Add to all groups
-sudo usermod -a -G adm
-sudo usermod -a -G dialout
-sudo usermod -a -G cdrom
-sudo usermod -a -G sudo
-sudo usermod -a -G audio
-sudo usermod -a -G video
-sudo usermod -a -G plugdev
-sudo usermod -a -G games
-sudo usermod -a -G users
-sudo usermod -a -G input
-sudo usermod -a -G netdev
-sudo usermod -a -G spi
-sudo usermod -a -G gpio
+sudo usermod -a -G adm blueaudio
+sudo usermod -a -G dialout blueaudio
+sudo usermod -a -G cdrom blueaudio
+sudo usermod -a -G sudo blueaudio
+sudo usermod -a -G audio blueaudio
+sudo usermod -a -G video blueaudio
+sudo usermod -a -G plugdev blueaudio
+sudo usermod -a -G games blueaudio
+sudo usermod -a -G users blueaudio
+sudo usermod -a -G input blueaudio
+sudo usermod -a -G netdev blueaudio
+sudo usermod -a -G spi blueaudio
+sudo usermod -a -G gpio blueaudio
 
-## Configure a2dp agent to use blueaudio
-echo "[Unit]
-Description=Bluetooth A2DP Agent
-Requires=bluetooth.service
-After=bluetooth.service
+## Configure alsa to reroute to file
+echo "pcm.!default {
+        type plug
+        slave.pcm rate48000Hz
+}
 
-[Service]
-ExecStart=/usr/local/bin/a2dp-agent.py
-RestartSec=5
-Restart=always
-User=blueaudio
+pcm.rate48000Hz {
+        type rate
+        slave {
+                pcm writeFile # Direct to the plugin which will write to a file
+                format S16_LE
+                rate 48000
+        }
+}
 
-[Install]
-WantedBy=multi-user.target
-" | sudo tee /etc/systemd/system/a2dp-agent.service
+pcm.writeFile {
+        type file
+        slave.pcm null
+        file "/tmp/bluesnapfifo"
+        format "raw"
+}
+" | sudo tee /home/blueaudio/.asoundrc 
 
 ## Configure Aplay Service to use blueaudio
 echo "[Unit]
@@ -81,6 +88,7 @@ BACKEND_ARGS="--backend pipe --device /tmp/snapfifo"' | sudo tee /etc/default/ra
 
 # Configure Snapserver
 echo 'SNAPSERVER_OPTS="-d"' | sudo tee /etc/default/snapserver
+sudo cp config/snapserver.conf /etc/snapserver.conf
 
 # Create Service routine
 echo "[Unit]
