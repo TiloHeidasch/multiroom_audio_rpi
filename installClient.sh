@@ -35,12 +35,14 @@ fi
 basepath=$(pwd)
 
 # Make sure that the basepath has the correct ending
-if [[ $basepath == *"multiroom_audio_rpi"* ]]; then
+if [[ $basepath == *"multiroom_audio_rpi-master"* ]]; then
   echo "Path is Correct"
 else
   echo "Path is incorrect. Trying to fix"
-  basepath="$basepath/multiroom_audio_rpi"
+  basepath="$basepath/multiroom_audio_rpi-master"
 fi
+
+cd $basepath
 
 # Make sure we are up to date
 sudo apt-get update
