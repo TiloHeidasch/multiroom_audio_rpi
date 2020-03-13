@@ -1,0 +1,9 @@
+[Unit]
+Description=Multiroom Audio RPi Server Service
+
+[Service]
+Type=simple
+ExecStart=snapserver
+
+[Install]
+WantedBy=multi-user.target

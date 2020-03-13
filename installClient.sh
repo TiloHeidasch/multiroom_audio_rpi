@@ -62,7 +62,7 @@ sudo apt-get install -y\
 	--no-install-recommends
 	
 # Configure Pulse
-sudo cp ./config/default.pa /etc/pulse/default.pa
+sudo cp -r client/etc /etc
 
 # Create service routine
 echo "[Unit]
