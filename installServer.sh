@@ -12,6 +12,10 @@ fi
 
 cd $basepath
 
+# System Update
+sudo apt-get update
+sudo apt-get upgrade -y
+
 # Raspotify Install
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh &&
 
