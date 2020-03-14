@@ -11,12 +11,14 @@
     wget -q https://github.com/TiloHeidasch/multiroom_audio_rpi/archive/master.zip
     unzip master.zip
     rm master.zip
+    cd multiroom_audio_rpi-master
+    
 
 ### Install Server:
-`./multiroom_audio_rpi/installServer.sh`
+`./installServer.sh`
 
 ### Install Client
-`./multiroom_audio_rpi/installClient.sh aaa.bbb.ccc.ddd`
+`./installClient.sh aaa.bbb.ccc.ddd`
 Provide server IP in aaa.bbb.ccc.ddd
 
 ## Credits
