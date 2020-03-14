@@ -32,7 +32,7 @@ cd ..
 
 # Configure Bluetooth
 ## Add Bluetooth User
-sudo adduser blueaudio
+sudo adduser --disabled-password --gecos "" blueaudio
 ## Add to all groups
 sudo usermod -a -G adm blueaudio
 sudo usermod -a -G dialout blueaudio
