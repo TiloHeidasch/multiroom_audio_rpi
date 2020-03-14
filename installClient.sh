@@ -84,5 +84,11 @@ sudo systemctl enable multiroom_audio_rpi_client_$1.service
 # Up the new service routine
 sudo systemctl start multiroom_audio_rpi_client_$1.service
 
+# Disable default snapclient service
+sudo systemctl disable snapclient.service
+
+# Stop default snapclient service
+sudo systemctl stop snapclient.service
+
 # Cleanup
 sudo rm snapclient_0.17.1-1_armhf.deb
