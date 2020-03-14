@@ -70,8 +70,8 @@ sudo cp $basepath/server/home/blueaudio/.asoundrc /home/blueaudio
 # Start new service routine
 sudo systemctl enable multiroom_audio_rpi_server.service
 
-# Reboot Raspotify
-sudo systemctl restart raspotify.service
+# Disable Raspotify Service, since it is only here to provide librespot
+sudo systemctl disable raspotify.service
 
 # Start new service routine
 sudo systemctl start multiroom_audio_rpi_server.service
