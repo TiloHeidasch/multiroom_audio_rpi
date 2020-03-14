@@ -44,9 +44,9 @@ fi
 
 cd $basepath
 
-# Make sure we are up to date
+# System Update
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 # Downlaod the Snapclient
 wget https://github.com/badaix/snapcast/releases/download/v0.17.1/snapclient_0.17.1-1_armhf.deb
