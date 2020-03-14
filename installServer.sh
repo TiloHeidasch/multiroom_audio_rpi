@@ -58,7 +58,10 @@ echo "dtoverlay=pi3-disable-bt" | sudo tee -a /boot/config.txt
 echo 'SNAPSERVER_OPTS="-d"' | sudo tee /etc/default/snapserver
 
 # Copy server configuration
-sudo cp -r $basepath/server/etc /etc
+sudo cp $basepath/server/etc/snapserver.conf /etc/
+sudo cp $basepath/server/etc/systemd/system/multiroom_audio_rpi_server.service /etc/systemd/system/
+sudo cp $basepath/server/etc/systemd/system/bluealsa-aplay.service /etc/systemd/system/
+sudo cp $basepath/server/home/blueaudio/.asoundrc /home/blueaudio
 
 # Start new service routine
 sudo systemctl enable multiroom_audio_rpi_server.service
