@@ -34,6 +34,11 @@ cd rpi-audio-receiver-master
 ./install.sh
 cd ..
 
+# UI Install
+wget -q https://github.com/TiloHeidasch/snapcast-websockets-ui/archive/master.zip
+unzip master.zip
+rm master.zip
+
 # Configure Bluetooth
 ## Add Bluetooth User
 sudo adduser --disabled-password --gecos "" blueaudio
