@@ -11,14 +11,12 @@
     wget -q https://github.com/TiloHeidasch/multiroom_audio_rpi/archive/master.zip
     unzip master.zip
     rm master.zip
-    cd multiroom_audio_rpi-master
-    
 
 ### Install Server:
-`./installServer.sh`
+`./multiroom_audio_rpi/installServer.sh`
 
 ### Install Client
-`./installClient.sh aaa.bbb.ccc.ddd`
+`./multiroom_audio_rpi/installClient.sh aaa.bbb.ccc.ddd`
 Provide server IP in aaa.bbb.ccc.ddd
 
 ## Credits
@@ -27,3 +25,4 @@ Provide server IP in aaa.bbb.ccc.ddd
 <p>It is using <a href='https://github.com/dtcooper/raspotify'>raspotify</a> and <a href='https://github.com/badaix/snapcast'>snapcast</a> to enable spotify multiroom audio.</p>
 
 <p>Further more this was inspired by following threads: https://github.com/badaix/snapcast/issues/425 and https://github.com/dtcooper/raspotify/issues/30</p>
+<p>Bluetooth integration: https://github.com/badaix/snapcast/issues/379 and https://github.com/nicokaiser/rpi-audio-receiver</p>
