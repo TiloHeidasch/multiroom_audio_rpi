@@ -35,7 +35,7 @@ cd rpi-audio-receiver-master
 cd ..
 
 # UI Install
-wget -q https://github.com/TiloHeidasch/snapcast-websockets-ui/archive/master.zip
+wget -q https://github.com/TiloHeidasch/snapui/archive/master.zip
 unzip master.zip
 rm master.zip
 
